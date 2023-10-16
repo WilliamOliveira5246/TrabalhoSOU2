@@ -61,3 +61,14 @@ void MainWindow::on_pushButton_2_clicked()
     trem1->terminate();
     trem2->terminate();
 }
+
+void MainWindow::on_horizontalSlider_sliderMoved(int position)
+{
+    trem1->alteraVelocidade(200 - position);
+}
+
+void MainWindow::on_horizontalSlider_2_sliderMoved(int position)
+{
+    trem2->alteraVelocidade(200 - position);
+}
+
