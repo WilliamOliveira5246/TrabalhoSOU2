@@ -2,7 +2,6 @@
 #define TREM_H
 
 #include <QThread>
-#include <semaphore.h>
 
 
 /*

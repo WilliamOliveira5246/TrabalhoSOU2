@@ -23,6 +23,9 @@ public slots:
 private slots:
     void on_horizontalSlider_sliderMoved(int position);
     void on_horizontalSlider_2_sliderMoved(int position);
+    void on_horizontalSlider_3_sliderMoved(int position);
+    void on_horizontalSlider_4_sliderMoved(int position);
+    void on_horizontalSlider_5_sliderMoved(int position);
 
 private:
     Ui::MainWindow *ui;
@@ -30,6 +33,9 @@ private:
     //Cria os objetos TREM's
     Trem *trem1;
     Trem *trem2;
+    Trem *trem3;
+    Trem *trem4;
+    Trem *trem5;
 };
 
 #endif // MAINWINDOW_H

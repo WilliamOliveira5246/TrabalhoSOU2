@@ -9,7 +9,7 @@ Trem::Trem(int ID, int x, int y){
     this->ID = ID;
     this->x = x;
     this->y = y;
-    velocidade = 200;
+    velocidade = 100;
 }
 
 bool loop2 = false;
