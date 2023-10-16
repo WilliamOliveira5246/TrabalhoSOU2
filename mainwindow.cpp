@@ -23,6 +23,9 @@ MainWindow::MainWindow(QWidget *parent) :
      */
     connect(trem1,SIGNAL(updateGUI(int,int,int)),SLOT(updateInterface(int,int,int)));
     connect(trem2,SIGNAL(updateGUI(int,int,int)),SLOT(updateInterface(int,int,int)));
+    connect(trem3,SIGNAL(updateGUI(int,int,int)),SLOT(updateInterface(int,int,int)));
+    connect(trem4,SIGNAL(updateGUI(int,int,int)),SLOT(updateInterface(int,int,int)));
+    connect(trem5,SIGNAL(updateGUI(int,int,int)),SLOT(updateInterface(int,int,int)));
 
     trem1->start();
     trem2->start();
@@ -71,15 +74,15 @@ void MainWindow::on_horizontalSlider_2_sliderMoved(int position)
 
 void MainWindow::on_horizontalSlider_3_sliderMoved(int position)
 {
-    trem2->alteraVelocidade(200 - position);
+    trem3->alteraVelocidade(200 - position);
 }
 
 void MainWindow::on_horizontalSlider_4_sliderMoved(int position)
 {
-    trem2->alteraVelocidade(200 - position);
+    trem4->alteraVelocidade(200 - position);
 }
 
 void MainWindow::on_horizontalSlider_5_sliderMoved(int position)
 {
-    trem2->alteraVelocidade(200 - position);
+    trem5->alteraVelocidade(200 - position);
 }
