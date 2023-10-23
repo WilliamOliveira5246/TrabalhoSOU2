@@ -40,6 +40,7 @@ void Trem::run(){
                     }
                     else if (x == 470 && y < 150){
                         if(y == 130){
+                            pthread_mutex_lock(&mutexT1T3);
                             pthread_mutex_lock(&mutexT1T4);
                         }
                         y+=10;
@@ -47,9 +48,7 @@ void Trem::run(){
                     else if (x > 200 && y == 150){ //x = 330 | y = 150
                         if(x == 450){
                             pthread_mutex_unlock(&mutexT1T2);
-                        } else if (x == 360){
-                            pthread_mutex_lock(&mutexT1T3);
-                        }else if (x == 320){
+                        } else if (x == 320){
                             pthread_mutex_unlock(&mutexT1T4);
                         }
                         x-=10;
@@ -68,14 +67,14 @@ void Trem::run(){
                     }
                     if (x == 740 && y < 150){
                         if (y == 130){
+                            pthread_mutex_lock(&mutexT2T4);
                             pthread_mutex_lock(&mutexT2T5);
+
                         }
                         y += 10;
                     }
                     else if (x > 470 && y == 150){
-                        if (x == 630){
-                            pthread_mutex_lock(&mutexT2T4);
-                        } else if (x == 590){
+                        if (x == 590){
                             pthread_mutex_unlock(&mutexT2T5);
                         } else if (x == 490){
                             pthread_mutex_lock(&mutexT1T2);
@@ -102,13 +101,10 @@ void Trem::run(){
             }
             if (y == 150 && x <340){
                 if (x == 180){
+                    pthread_mutex_lock(&mutexT3T4);
                     pthread_mutex_lock(&mutexT1T3);
                     x+=10;
-                }
-                else if (x == 320){
-                    pthread_mutex_lock(&mutexT3T4);
-                    x+=10;
-                } else{
+                }else{
                     x+=10;
                 }
             }
@@ -144,11 +140,7 @@ void Trem::run(){
                 } else if (x == 490){
                     pthread_mutex_unlock(&mutexT1T4);
                     x+=10;
-                } else if (x == 450){
-                    pthread_mutex_lock(&mutexT2T4);
-                    x+=10;
-
-                }else if (x == 590){
+                } else if (x == 590){
                     pthread_mutex_lock(&mutexT4T5);
                     x+=10;
                 }
@@ -178,6 +170,7 @@ void Trem::run(){
             }
             else{
                 if (y == 170){
+                    pthread_mutex_lock(&mutexT2T4);
                     pthread_mutex_lock(&mutexT1T4);
                     y-=10;
                 } else {
